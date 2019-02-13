@@ -54,7 +54,7 @@ function ses_sidebar_email(){
 function ses_sidebar_tel(){
     $ddd = esc_attr( get_option ( 'ddd_unidade' ) );
     $tel = esc_attr( get_option ( 'tel_unidade' ) );
-    echo '<input type="tel" name="ddd_unidade" class="ddd" value="'.$ddd.'" placeholder="DDD" /> <input type="tel" name="tel_unidade" value="'.$tel.'" placeholder="Telefone Contato" />';
+    echo '<input type="tel" name="ddd_unidade" class="ddd" maxlength="2" value="'.$ddd.'" placeholder="DDD" /> <input type="tel" name="tel_unidade" value="'.$tel.'" placeholder="Telefone Contato" /> <p class="description">Somente números</p>      ';
 }
 function ses_sidebar_endereco(){
     $endereco = esc_attr( get_option ( 'endereco_unidade' ) );
