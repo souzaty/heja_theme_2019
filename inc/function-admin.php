@@ -61,12 +61,12 @@ function ses_sidebar_endereco(){
     echo '<input type="text" name="endereco_unidade" value="'.$endereco.'" placeholder="Endereço Unidade" />';
 }
 function ses_sidebar_cep(){
-    $cep = esc_attr( get_option ( 'endereco_unidade' ) );
-    echo '<input type="text" name="cep_unidade" value="'.$cep.'" placeholder="Endereço Unidade" />';
+    $cep = esc_attr( get_option ( 'cep_unidade' ) );
+    echo '<input type="text" name="cep_unidade" value="'.$cep.'" placeholder="CEP" />';
 }
 function ses_sidebar_cnpj(){
-    $cnpj = esc_attr( get_option ( 'endereco_unidade' ) );
-    echo '<input type="text" name="cnpj_unidade" value="'.$cnpj.'" placeholder="Endereço Unidade" />';
+    $cnpj = esc_attr( get_option ( 'cnpj_unidade' ) );
+    echo '<input type="text" name="cnpj_unidade" value="'.$cnpj.'" placeholder="CNPJ" />';
 }
 function ses_theme_create_page() {
     require_once( get_template_directory() . '/inc/templates/ses-admin.php' );
