@@ -10,24 +10,63 @@
     $cep = esc_attr( get_option ( 'cep_unidade' ) );
     $cnpj = esc_attr( get_option ( 'cnpj_unidade' ) );
 ?>
-    <hr>
-    <h2>Preview</h2>
-    <div class="col-md-3">
-        <aside id="text-3" class="widget widget_text footer-menu"><h4 class="widget-title">CONTATO</h4>
-            <div class="textwidget"><p style="margin-top: 30px;"><?php print $tel ?> </p>
-                <p><?php print $email ?></p>
-                <p><?php print $endereco ?> <br><?php print $cep ?></p>
-                <p>
-                    <a href="http://heja.org.br/fale-conosco"><button class="btn btn-default btn-white" type="button" aria-label="Left Align">fale conosco</button></a>
-                </p>
-            </div>
-        </aside>
+<div class="admin-input-data">
+    <div class="ses-admin-form">
+        <form id="submitForm" method="post" action="options.php" class="ses-general-form">
+            <?php settings_fields ( 'ses-settings-group' ); ?>
+            <?php do_settings_sections('souzaty_ses'); ?>
+            <?php submit_button(); ?>
+       </form>
     </div>
-    <hr>
+</div>
+<h2>Pré-visualização</h2>
+<div class="admin-preview-data">
 
-    <form id="submitForm" method="post" action="options.php" class="ses-general-form">
-        <?php settings_fields ( 'ses-settings-group' ); ?>
-        <?php do_settings_sections('souzaty_ses'); ?>
-        <?php submit_button(); ?>
-   </form>
+<div class="ses-admin-preview">
+    <div class="ses-sidebar-preview">
+        <h3>Sidebar</h3>
+        <div class="ses-sidebar">
+    		<div class="ses-sidebar-tel">
+				<span class="tel-icon-destaque"></span>
+				<p class="text-box"><b>(<?php print $ddd ?>) <?php print $tel ?></b><br> Fale Conosco</p>
+            </div>
+			<div class="ses-sidebar-endereco">
+				<span class="map-icon-destaque"></span>
+				<p class="text-box"><b>Como Chegar</b><br> Acessar Mapa</p>
+			</div>
+			<div class="ses-sidebar-email">
+				<div class="box">
+				<span class="msg-icon-destaque"></span>
+				<p class="text-box"><?php print $email ?></p>
+				</div>
+			</div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+<div class="ses-admin-preview">
+    <div class="ses-sidebar-preview">
+        <h3>Rodapé</h3>
+        <div class="ses-sidebar">
+    		<div class="ses-sidebar-tel">
+				<span class="tel-icon-destaque"></span>
+				<p class="text-box"><b>(<?php print $ddd ?>) <?php print $tel ?></b><br> Fale Conosco</p>
+            </div>
+    			<div class="ses-sidebar-endereco">
+					<span class="map-icon-destaque"></span>
+					<p class="text-box"><b>Como Chegar</b><br> Acessar Mapa</p>
+    			</div>
+    			<div class="ses-sidebar-email">
+    				<div class="box">
+					<span class="msg-icon-destaque"></span>
+					<p class="text-box"><?php print $email ?></p>
+    				</div>
+    			</div>
+    			<p></p>
+    			<p>
+    			</p>
+    		</div>
+        </div>
+    </div>
+</div>
 </div>

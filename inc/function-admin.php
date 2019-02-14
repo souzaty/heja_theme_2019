@@ -45,28 +45,28 @@ function ses_sidebar_options() {
 }
 function ses_sidebar_name() {
     $nomeUnidade = esc_attr( get_option ( 'nome_unidade' ) );
-    echo '<input type="text" name="nome_unidade" value="'.$nomeUnidade.'" placeholder="Nome Unidade" />';
+    echo '<input class="ses-nome-unidade" type="text" name="nome_unidade" value="'.$nomeUnidade.'" placeholder="Nome Unidade" />';
 }
 function ses_sidebar_email(){
     $email = esc_attr( get_option ( 'email_unidade' ) );
-    echo '<input type="email" name="email_unidade" value="'.$email.'" placeholder="E-mail" />';
+    echo '<input class="ses-email" type="email" name="email_unidade" value="'.$email.'" placeholder="E-mail" />';
 }
 function ses_sidebar_tel(){
     $ddd = esc_attr( get_option ( 'ddd_unidade' ) );
     $tel = esc_attr( get_option ( 'tel_unidade' ) );
-    echo '<input type="tel" name="ddd_unidade" class="ddd" maxlength="2" value="'.$ddd.'" placeholder="DDD" /> <input type="tel" name="tel_unidade" value="'.$tel.'" placeholder="Telefone Contato" /> <p class="description">Somente números</p>      ';
+    echo '<input class="ses-ddd" type="tel" name="ddd_unidade" class="ddd" maxlength="2" value="'.$ddd.'" placeholder="DDD" /> <input class="ses-tel" type="tel" name="tel_unidade" value="'.$tel.'" placeholder="Telefone Contato" /> <p class="description">Somente números</p>      ';
 }
 function ses_sidebar_endereco(){
     $endereco = esc_attr( get_option ( 'endereco_unidade' ) );
-    echo '<input type="text" name="endereco_unidade" value="'.$endereco.'" placeholder="Endereço Unidade" />';
+    echo '<input class="ses-endereco" type="text" name="endereco_unidade" value="'.$endereco.'" placeholder="Endereço Unidade" />';
 }
 function ses_sidebar_cep(){
     $cep = esc_attr( get_option ( 'cep_unidade' ) );
-    echo '<input type="text" name="cep_unidade" value="'.$cep.'" placeholder="CEP" />';
+    echo '<input type="text" class="ses-cep" name="cep_unidade" value="'.$cep.'" placeholder="CEP" />';
 }
 function ses_sidebar_cnpj(){
     $cnpj = esc_attr( get_option ( 'cnpj_unidade' ) );
-    echo '<input type="text" name="cnpj_unidade" value="'.$cnpj.'" placeholder="CNPJ" />';
+    echo '<input class="ses-cnpj" type="text" name="cnpj_unidade" value="'.$cnpj.'" placeholder="CNPJ" />';
 }
 function ses_theme_create_page() {
     require_once( get_template_directory() . '/inc/templates/ses-admin.php' );

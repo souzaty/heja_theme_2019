@@ -1,5 +1,23 @@
 /*
  @package SES 2019
 */
+
 #wpcontent {padding: 0;}
-#wpbody { }
+.admin-input-data { border-bottom:1px solid #ababab}
+ .admin-preview-data {max-width:50%; margin-top:40px; display:flex;}
+
+.ses-admin-form input { width:100%; max-width:400px; background:#efefef; border:1px solid #089fab; padding:8px 20px; }
+input.ses-ddd { width: 80px; margin-right:20px; }
+input.ses-tel { width: 300px; }
+input#submit {width:auto;}
+
+
+.ses-admin-preview{ width:60%; margin-right:20px; padding:20px;vertical-align: top; background:#dfdfdf;border-bottom:1px solid #ababab; margin-bottom: 20px; }
+.ses-sidebar {max-width: 300px;}
+h2 {font-size:30px; font-weight:bold; color: #004a84; width: 100%; text-transform: uppercase;;}
+.ses-sidebar-preview h3 {font-size:26px; color: #5a5a5a;}
+/* sidebar style */
+.ses-sidebar-tel, .ses-sidebar-email, .ses-sidebar-endereco{ padding: 20px; color:#fff;}
+.ses-sidebar-tel {background: #0072a4;}
+.ses-sidebar-endereco {background: #198fb2}
+.ses-sidebar-email {background:#3ecfa4 }
