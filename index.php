@@ -1,3 +1,3 @@
 <?php get_header() ?>
 
-<?php get_fotter(); ?>
+<?php get_footer(); ?>
