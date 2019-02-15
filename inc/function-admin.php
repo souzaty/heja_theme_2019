@@ -15,6 +15,7 @@ function ses_add_admin_page() {
     // Ganerate SES Admin Sub Page
     add_submenu_page( 'souzaty_ses', 'SES Theme Options', 'Contato', 'manage_options', 'souzaty_ses', 'ses_theme_create_page' );
     add_submenu_page( 'souzaty_ses', 'SES Social Options', 'Redes Sociais', 'manage_options', 'souzaty_social', 'ses_theme_settings_page' );
+    add_submenu_page( 'souzaty_ses', 'SES Intergation Options', 'Integração', 'manage_options', 'souzaty_integracao', 'ses_theme_settings_page' );
 
     // Activate custom settings
     add_action( 'admin_init', 'ses_custom_settings' );

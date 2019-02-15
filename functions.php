@@ -1,10 +1,48 @@
 <?php
+/**
+* @package WordPress
+* @subpackage SES - GO Unidades
+* @since SES - GO Unidades 1.0
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+#Load scripts
+# Theme Admin
+# Menu
+# Theme Suport
+  ## Feed Links
+  ## Pagination
+  ## Thumbnails Sizes
+  ## HTML 5 Support
+  ## Post Formats
+  ## Remove Meta Generator
+# Widgets
+# CPT Custom Post Types
+# Shortcodes
+# WP-login Customization
+--------------------------------------------------------------*/
 
+ // ========== Start Load scripts
+function load_scripts() {
+    // bootstrap scripts
+        wp_enqueue_style( 'Bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array(), '3.3.7', 'all' );
+        wp_enqueue_script( 'Bootstrap JS', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array('jquery'), null, true);
+    // Theme scripts
+        wp_enqueue_style( 'custom', get_template_directory_uri(). '/css/custom.css', array(), '1.0', 'all' );
+        wp_enqueue_script( 'template', get_template_directory_uri(). '/js/template.js', array(), null, true);
+    // Font awesome
+        wp_enqueue_style( 'FontAwesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', array(), '', 'all' );
+    }
+    add_action( 'wp_enqueue_scripts', 'load_scripts' );
 
  // ========== Start Theme Admin
  require get_template_directory() . '/inc/function-admin.php';
  require get_template_directory() . '/inc/enqueue.php';
 
+ // ========== Start Menu
+ register_nav_menus(array( 'menu_header' => __('Menu topo Unidade', ''),
+ ));
 
  // ========== Start Theme Suport
 
@@ -29,7 +67,7 @@
  				'caption'
  ));
 
- // Adicona suporte a vários tipos de posts
+ // Adiciona suporte a vários tipos de posts
  add_theme_support('post-formats', array(
  				'aside',
  				'image',
