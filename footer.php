@@ -29,3 +29,6 @@ $cnpj = esc_attr( get_option ( 'cnpj_unidade' ) );
         </div>
     </div>
 </footer>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/bootstrap.min.js"></script>
+<script src='<?php echo esc_url( get_template_directory_uri() ); ?>/js/listnav.js'></script>
