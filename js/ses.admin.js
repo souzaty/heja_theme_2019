@@ -32,7 +32,7 @@ jQuery(document).ready( function($){
 		var answer = confirm("Tem certeza de que deseja remover sua imagem de logo?");
 		if( answer == true ){
 			$('#profile-picture').val('');
-			$('.sunset-general-form').submit();
+			$('.ses-general-form').submit();
 		}
 		return;
 	});

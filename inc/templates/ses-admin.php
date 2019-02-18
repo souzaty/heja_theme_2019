@@ -16,7 +16,7 @@
         <form id="submitForm" method="post" action="options.php" class="ses-general-form">
             <?php settings_fields ( 'ses-settings-group' ); ?>
             <?php do_settings_sections('souzaty_ses'); ?>
-            <?php submit_button(); ?>
+            <?php submit_button( 'Save Changes', 'primary', 'btnSubmit' ); ?>
        </form>
     </div>
 </div>
@@ -26,6 +26,9 @@
 <div class="ses-admin-preview">
     <div class="ses-sidebar-preview">
         <h3>Sidebar</h3>
+        <div class="image-container">
+			<div id="profile-picture-preview" class="profile-picture" style="background-image: url(<?php print $logoUnidadeRodape; ?>);"></div>
+		</div>
         <div class="ses-sidebar">
     		<div class="ses-sidebar-tel">
 				<span class="tel-icon-destaque"></span>

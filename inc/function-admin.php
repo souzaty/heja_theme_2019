@@ -13,9 +13,10 @@ function ses_add_admin_page() {
     add_menu_page( 'SES Theme Options', 'SES', 'manage_options', 'souzaty_ses', 'ses_theme_create_page', get_template_directory_uri() . '/img/admin-icon.png', 110  );
 
     // Ganerate SES Admin Sub Page
-    add_submenu_page( 'souzaty_ses', 'SES Theme Options', 'Contato', 'manage_options', 'souzaty_ses', 'ses_theme_create_page' );
+    add_submenu_page( 'souzaty_ses', 'SES Sidebar Options', 'Sidebar', 'manage_options', 'souzaty_ses', 'ses_theme_create_page' );
     add_submenu_page( 'souzaty_ses', 'SES Social Options', 'Redes Sociais', 'manage_options', 'souzaty_social', 'ses_theme_settings_page' );
-    add_submenu_page( 'souzaty_ses', 'SES Intergation Options', 'Integração', 'manage_options', 'souzaty_integracao', 'ses_theme_settings_page' );
+    add_submenu_page( 'souzaty_ses', 'SES Intergation Options', 'Integração', 'manage_options', 'souzaty_integracao', 'ses_theme_instegration_page' );
+    add_submenu_page( 'souzaty_ses', 'SES Theme Options', 'Theme Options', 'manage_options', 'souzaty_ses_theme', 'ses_theme_support_page' );
 
     // Activate custom settings
     add_action( 'admin_init', 'ses_custom_settings' );
@@ -23,6 +24,7 @@ function ses_add_admin_page() {
 add_action( 'admin_menu', 'ses_add_admin_page' );
 
 function ses_custom_settings() {
+    // Sidebar options
     register_setting( 'ses-settings-group', 'logo_unidade_rodape' );
     register_setting( 'ses-settings-group', 'nome_unidade' );
     register_setting( 'ses-settings-group', 'email_unidade' );
@@ -34,15 +36,41 @@ function ses_custom_settings() {
 
     add_settings_section( 'ses-sidebar-options', 'Sidebar Option', 'ses_sidebar_options', 'souzaty_ses' );
 
-    add_settings_field( 'sidebar-unidade-rodape', 'Logo Unidade', 'ses_sidebar_logo_unidade_rodape', 'souzaty_ses', 'ses-sidebar-options' );
+    add_settings_field( 'sidebar-logo-unidade-rodape', 'Logo Unidade', 'ses_sidebar_logo_unidade_rodape', 'souzaty_ses', 'ses-sidebar-options' );
     add_settings_field( 'sidebar-name', 'Nome da unidade', 'ses_sidebar_name', 'souzaty_ses', 'ses-sidebar-options' );
     add_settings_field( 'sidebar-email', 'E-mail de contato', 'ses_sidebar_email', 'souzaty_ses', 'ses-sidebar-options' );
     add_settings_field( 'sidebar-tel', 'Telefone de contato', 'ses_sidebar_tel', 'souzaty_ses', 'ses-sidebar-options' );
     add_settings_field( 'sidebar-endereco', 'Endereço da unidade', 'ses_sidebar_endereco', 'souzaty_ses', 'ses-sidebar-options' );
     add_settings_field( 'sidebar-cep', 'CEP da unidade', 'ses_sidebar_cep', 'souzaty_ses', 'ses-sidebar-options' );
     add_settings_field( 'sidebar-cnpj', 'CNPJ da unidade', 'ses_sidebar_cnpj', 'souzaty_ses', 'ses-sidebar-options' );
+
+    //Theme Support settings
+    register_setting( 'ses-theme-support', 'post_formats', 'ses_post_formats_callback' );
+
+    add_settings_section( 'ses-theme-options', 'Theme Options', 'ses_theme_options', 'souzaty_ses_theme'  );
+
+    add_settings_field( 'post-formats', 'Post formats', 'ses_post_formats', 'souzaty_ses_theme', 'ses-theme-options' );
 }
 
+// Post Formats Callback functions
+function ses_post_formats_callback( $input ) {
+    return $input;
+}
+function ses_theme_options() {
+    echo 'Activate your dpecific theme support options';
+}
+function ses_post_formats() {
+    $options = get_option( 'post_formats' );
+    $formats = array( 'aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio', 'chat' );
+    $output = '';
+    foreach ( $formats as $format ) {
+        $checked = ( @$options[$format] == 1 ? 'checked' : '' );
+        $output .= '<label><input type="checkbox" id="'.$format.'" name="post_formats['.$format.']" value="1" '.$checked.' /> '.$format.'</label><br>';
+	}
+	echo $output;
+}
+
+// Sidebar options functions
 function ses_sidebar_options() {
     echo 'customizar';
 }
@@ -77,9 +105,15 @@ function ses_sidebar_cnpj(){
     $cnpj = esc_attr( get_option ( 'cnpj_unidade' ) );
     echo '<input class="ses-cnpj" type="text" name="cnpj_unidade" value="'.$cnpj.'" placeholder="CNPJ" />';
 }
+// Template submenu functions
 function ses_theme_create_page() {
     require_once( get_template_directory() . '/inc/templates/ses-admin.php' );
 }
+function ses_theme_support_page() {
+    require_once( get_template_directory() . '/inc/templates/ses-theme-support.php' );
+}
+
 function ses_theme_settings_page() {
     // Generation of admin page
+    echo '<h1>Configurações</h1>';
 }

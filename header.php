@@ -43,7 +43,7 @@
 	<div class="container">
 		<!-- Branding -->
 		<div class="image-container">
-			<div id="profile-picture-preview" class="profile-picture" style="background-image: url(<?php print $logoUnidadeRodape; ?>);"></div>
+			<div id="profile-picture" class="profile-picture" style="background-image: url(<?php print $logoUnidadeRodape; ?>);"></div>
 		</div>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
