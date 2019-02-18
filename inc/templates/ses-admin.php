@@ -2,6 +2,7 @@
     <h1>Informações de contato</h1>
     <?php settings_errors(); ?>
     <?php
+    $logoUnidadeRodape = esc_attr( get_option ( 'logo_unidade_rodape' ) );
     $nomeUnidade = esc_attr( get_option ( 'nome_unidade' ) );
     $email = esc_attr( get_option ( 'email_unidade' ) );
     $ddd = esc_attr( get_option ( 'ddd_unidade' ) );
@@ -44,6 +45,7 @@
     </div>
 </div>
 <!-- Footer -->
+<img src="<?php print $logoUnidadeRodape ?>" alt="">
 <div class="ses-admin-preview">
     <div class="ses-sidebar-preview">
         <h3>Rodapé</h3>

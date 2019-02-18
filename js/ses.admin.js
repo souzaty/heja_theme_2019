@@ -10,9 +10,9 @@ jQuery(document).ready( function($){
 		}
 
 		mediaUploader = wp.media.frames.file_frame = wp.media({
-			title: 'Choose a Profile Picture',
+			title: 'Escolha a imagem para logo',
 			button: {
-				text: 'Choose Picture'
+				text: 'Definir logo'
 			},
 			multiple: false
 		});
@@ -29,7 +29,7 @@ jQuery(document).ready( function($){
 
 	$('#remove-picture').on('click',function(e){
 		e.preventDefault();
-		var answer = confirm("Are you sure you want to remove your Profile Picture?");
+		var answer = confirm("Tem certeza de que deseja remover sua imagem de logo?");
 		if( answer == true ){
 			$('#profile-picture').val('');
 			$('.sunset-general-form').submit();

@@ -17,6 +17,7 @@
 </head>
 <body <?php body_class(); ?> >
     <?php
+    $logoUnidadeRodape = esc_attr( get_option ( 'logo_unidade_rodape' ) );
     $nomeUnidade = esc_attr( get_option ( 'nome_unidade' ) );
     $email = esc_attr( get_option ( 'email_unidade' ) );
     $ddd = esc_attr( get_option ( 'ddd_unidade' ) );
@@ -34,7 +35,9 @@
   <nav class="navbar navbar-expand-lg ses-nav-default">
       <div class="container">
           <!-- Branding -->
-          <a class="navbar-brand" href="#">img logo aqui</a>
+          <a class="navbar-brand" href="#">
+              <img src=" <?php print $logoUnidadeRodape ?> " alt="" />
+          </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
