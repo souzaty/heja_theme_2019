@@ -22,6 +22,7 @@ function ses_add_admin_page() {
 add_action( 'admin_menu', 'ses_add_admin_page' );
 
 function ses_custom_settings() {
+    register_setting( 'ses-settings-group', 'logo_unidade_rodape' );
     register_setting( 'ses-settings-group', 'nome_unidade' );
     register_setting( 'ses-settings-group', 'email_unidade' );
     register_setting( 'ses-settings-group', 'tel_unidade' );
@@ -32,6 +33,7 @@ function ses_custom_settings() {
 
     add_settings_section( 'ses-sidebar-options', 'Sidebar Option', 'ses_sidebar_options', 'souzaty_ses' );
 
+    add_settings_field( 'sidebar-unidade-rodape', 'Logo Unidade', 'ses_sidebar_logo_unidade_rodape', 'souzaty_ses', 'ses-sidebar-options' );
     add_settings_field( 'sidebar-name', 'Nome da unidade', 'ses_sidebar_name', 'souzaty_ses', 'ses-sidebar-options' );
     add_settings_field( 'sidebar-email', 'E-mail de contato', 'ses_sidebar_email', 'souzaty_ses', 'ses-sidebar-options' );
     add_settings_field( 'sidebar-tel', 'Telefone de contato', 'ses_sidebar_tel', 'souzaty_ses', 'ses-sidebar-options' );
@@ -43,6 +45,12 @@ function ses_custom_settings() {
 function ses_sidebar_options() {
     echo 'customizar';
 }
+
+function ses_sidebar_logo_unidade_rodape() {
+    $logoUnidadeRodape = esc_attr( get_option ( 'logo_unidade_rodape' ) );
+    echo '<input type="button" class="button button-secundary" value="Upload Logo Unidade Rodape" id="upload-button" /> <input class="ses-logo-unidade-rodape" type="hidden" name="logo_unidade_rodape" value="'.$logoUnidadeRodape.'" />';
+}
+
 function ses_sidebar_name() {
     $nomeUnidade = esc_attr( get_option ( 'nome_unidade' ) );
     echo '<input class="ses-nome-unidade" type="text" name="nome_unidade" value="'.$nomeUnidade.'" placeholder="Nome Unidade" />';
