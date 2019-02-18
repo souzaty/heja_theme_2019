@@ -6,14 +6,21 @@
 */
  ?>
  <!DOCTYPE html>
- <html lang="pt-br" style="margin:0 !important; padding:0 !important;">
+ <html style="margin:0 !important; padding:0 !important;" <?php language_attributes(); ?>>
  <head>
-     <title><?php wp_title(''); ?></title>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title><?php bloginfo( 'name' ); wp_title(); ?></title>
+		<meta name="description" content="<?php bloginfo( 'description' ); ?>">
+		<meta charset="<?php bloginfo( 'charset' ); ?>">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="profile" href="http://gmpg.org/xfn/11">
      <link href="<?php echo esc_url( get_template_directory_uri() ); ?>/style.css" rel="stylesheet">
 <?php wp_head(); ?>
+<?php
+        $custom_css = esc_attr( get_option( 'sunset_css' ) );
+        if( !empty( $custom_css ) ):
+            echo '<style>' . $custom_css . '</style>';
+        endif;
+    ?>
 </head>
 <body <?php body_class(); ?> >
     <?php
@@ -26,43 +33,42 @@
     $cep = esc_attr( get_option ( 'cep_unidade' ) );
     $cnpj = esc_attr( get_option ( 'cnpj_unidade' ) );
     ?>
-  <!-- Navigation -->
-  <nav class="ses-nav-top">
-      <div class="container">
-          <a class="ses-mail-top" href="mailto:<?php print $email ?>"><?php print $email ?></a>
-      </div>
-  </nav>
-  <nav class="navbar navbar-expand-lg ses-nav-default">
-      <div class="container">
-          <!-- Branding -->
-          <a class="navbar-brand" href="#">
-              <img src=" <?php print $logoUnidadeRodape ?> " alt="" />
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!-- Menu -->
-            <?php wp_nav_menu( array(
-
-                'menu' => 'menu_header',
-                'theme_location' => 'menu_header',
-                'container' => 'div',
-                'container_class' => 'collapse navbar-collapse ses-nav-menu navbar-right',
-                'container_id' => 'navbarSupportedContent',
-                'menu_class' => 'nav justify-content-end',
-                'echo' => true,
-                'menu_id' => 'id_do_menu',
-                'before' => "",
-                'after' => "",
-                'link_before' => "",
-                'link_after' => "",
-                'depth' => 0,
-                'walker' => "",
-
-                ) );
-            ?>
-      </div>
+<!-- Navigation -->
+<nav class="ses-nav-top">
+	<div class="container">
+		<a class="ses-mail-top" href="mailto:<?php print $email ?>"><?php print $email ?></a>
+	</div>
 </nav>
+<nav class="navbar navbar-expand-lg ses-nav-default">
+	<div class="container">
+		<!-- Branding -->
+		<div class="image-container">
+			<div id="profile-picture-preview" class="profile-picture" style="background-image: url(<?php print $logoUnidadeRodape; ?>);"></div>
+		</div>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<!-- Menu -->
+		<?php wp_nav_menu( array(
+			'menu' => 'menu_header',
+			'theme_location' => 'menu_header',
+			'container' => 'div',
+			'container_class' => 'collapse navbar-collapse ses-nav-menu navbar-right',
+			'container_id' => 'navbarSupportedContent',
+			'menu_class' => 'nav justify-content-end',
+			'echo' => true,
+			'menu_id' => 'id_do_menu',
+			'before' => "",
+			'after' => "",
+			'link_before' => "",
+			'link_after' => "",
+			'depth' => 0,
+			'walker' => "",
+
+			) );
+			?>
+	</div><!-- end container -->
+</nav><!-- end nav -->
 <!-- Header -->
 <header class="masthead bg-primary text-white text-center">
 <div class="container">
