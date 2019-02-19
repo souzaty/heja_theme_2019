@@ -47,7 +47,7 @@ function especialidades_register()
 								),
 								'capability_type' => 'post',
 								'hierarchical' => false,
-								'menu_position' => 7,
+								'menu_position' => 25,
 								'supports' => array(
 												'title',
                                                 'editor'
@@ -119,7 +119,7 @@ function exames_register()
 								),
 								'capability_type' => 'post',
 								'hierarchical' => false,
-								'menu_position' => 7,
+								'menu_position' => 25,
 								'supports' => array(
 												'title',
                                                 'editor'
