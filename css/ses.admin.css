@@ -23,4 +23,6 @@ h2 {font-size:30px; font-weight:bold; color: #004a84; width: 100%; text-transfor
 .ses-sidebar-email {background:#3ecfa4 }
 
 /* Integration style */
-.ses-code-input { min-width: 600px; border: 1px solid #dfdfdf; background: #efefef; color: #00aaff; padding: 5px 12px; box-shadow: none; font-family: monospace; letter-spacing: 1px; line-height: 1.5em; }
+textarea.ses-code-input { min-width: 600px; border: 1px solid #cacaca; background: #fafaff; color: #00aaff; padding: 25px 30px; box-shadow: none; font-family: monospace; letter-spacing: 1px; line-height: 1.5em; }
+textarea.ses-code-input:active, textarea.ses-code-input:focus { background: #345; border-color: #00aaff; }
+.legend {color: #afafaf; padding-top: 10px; font-size:18px !important; font-weight:300;}
