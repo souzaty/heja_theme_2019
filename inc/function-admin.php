@@ -50,9 +50,9 @@ function ses_custom_settings() {
     register_setting( 'ses-integration-group', 'custom_css' );
     register_setting( 'ses-integration-group', 'code_maps' );
 
-    add_settings_section( 'ses-unidade-integration', 'Códigos de integração para inserir no template da Unidade Hospitalar', 'ses_unidade_integration', 'souzaty_ses' );
+    add_settings_section( 'ses-unidade-integration', 'Códigos de integração para inserir no template da Unidade Hospitalar', 'ses_unidade_integration', 'souzaty_ses_integration' );
 
-    add_settings_field( 'code-header', 'Header code', 'ses_code_header', 'souzaty_ses', 'ses-unidade-integration' );
+    add_settings_field( 'code-header', 'Header code', 'ses_code_header', 'souzaty_ses_integration', 'ses-unidade-integration' );
 
     // Theme Support settings
     register_setting( 'ses-theme-support', 'post_formats', 'ses_post_formats_callback' );
@@ -62,6 +62,14 @@ function ses_custom_settings() {
     add_settings_field( 'post-formats', 'Post formats', 'ses_post_formats', 'souzaty_ses_theme', 'ses-theme-options' );
 }
 
+// Unidade contact functions
+function ses_unidade_integration( $input ) {
+    return $input;
+}
+function ses_code_header() {
+    $codeHeader = esc_attr( get_option ( 'code_header' ) );
+    echo '<textarea rows="10" cols="30" class="ses-code-header" name="code_header" value="'.$codeHeader.'" placeholder="Insert here"></textarea> <p>insira o código aqui</p>';
+}
 // Post Formats Callback functions
 function ses_post_formats_callback( $input ) {
     return $input;
@@ -80,7 +88,7 @@ function ses_post_formats() {
 	echo $output;
 }
 
-// unidade options functions
+// Unidade contact functions
 function ses_unidade_options() {
     echo 'Preencha os campos abaixo com os dados da unidade';
 }
@@ -114,6 +122,7 @@ function ses_unidade_cnpj(){
     $cnpj = esc_attr( get_option ( 'cnpj_unidade' ) );
     echo '<input class="ses-cnpj" type="text" name="cnpj_unidade" value="'.$cnpj.'" placeholder="CNPJ" />';
 }
+
 // Template submenu functions
 function ses_theme_create_page() {
     require_once( get_template_directory() . '/inc/templates/ses-admin.php' );
@@ -122,8 +131,7 @@ function ses_theme_support_page() {
     require_once( get_template_directory() . '/inc/templates/ses-theme-support.php' );
 }
 function ses_theme_instegration_page() {
-    // Generation of admin page
-    echo '<h1>Configurações 1</h1>';
+    require_once( get_template_directory() . '/inc/templates/ses-integration.php' );
 }
 function ses_theme_settings_page() {
     // Generation of admin page

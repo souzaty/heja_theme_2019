@@ -14,7 +14,7 @@
 <div class="admin-input-data">
     <div class="ses-admin-form">
         <form id="submitForm" method="post" action="options.php" class="ses-general-form">
-            <?php settings_fields ( 'ses-settings-group' ); ?>
+            <?php settings_fields ( 'ses-info-group' ); ?>
             <?php do_settings_sections('souzaty_ses'); ?>
             <?php submit_button( 'Save Changes', 'primary', 'btnSubmit' ); ?>
        </form>
