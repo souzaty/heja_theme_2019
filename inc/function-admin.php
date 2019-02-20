@@ -45,7 +45,7 @@ function ses_custom_settings() {
     add_settings_field( 'unidade-cnpj', 'CNPJ da unidade', 'ses_unidade_cnpj', 'souzaty_ses', 'ses-unidade-options' );
 
     // Integration code settings
-    register_setting( 'ses-integration-group', 'code_header' );
+    register_setting( 'ses-integration-group', 'code_header', 'ses_sanitize_code_header' );
     register_setting( 'ses-integration-group', 'code_footer' );
     register_setting( 'ses-integration-group', 'custom_css' );
     register_setting( 'ses-integration-group', 'code_maps' );
@@ -53,6 +53,40 @@ function ses_custom_settings() {
     add_settings_section( 'ses-unidade-integration', 'Códigos de integração para inserir no template da Unidade Hospitalar', 'ses_unidade_integration', 'souzaty_ses_integration' );
 
     add_settings_field( 'code-header', 'Header code', 'ses_code_header', 'souzaty_ses_integration', 'ses-unidade-integration' );
+    add_settings_field( 'code-footer', 'Footer code', 'ses_code_footer', 'souzaty_ses_integration', 'ses-unidade-integration' );
+
+    // Sanitize header code
+    function ses_sanitize_code_header( $input )
+{
+    $new_input = array();
+
+    $allowed = array(
+        'script'    => array(
+            'src' => array()
+        )
+    );
+
+    if( isset( $input['code'] ) )
+        $new_input['code'] = wp_kses( $input['code'], $allowed );
+
+    return $new_input;
+}
+// Sanitize footer code
+    function ses_sanitize_code_footer( $input )
+{
+    $new_input = array();
+
+    $allowed = array(
+        'script'    => array(
+            'src' => array()
+        )
+    );
+
+    if( isset( $input['code'] ) )
+        $new_input['code'] = wp_kses( $input['code'], $allowed );
+
+    return $new_input;
+}
 
     // Theme Support settings
     register_setting( 'ses-theme-support', 'post_formats', 'ses_post_formats_callback' );
@@ -62,13 +96,21 @@ function ses_custom_settings() {
     add_settings_field( 'post-formats', 'Post formats', 'ses_post_formats', 'souzaty_ses_theme', 'ses-theme-options' );
 }
 
-// Unidade contact functions
+// Unidade integration functions
 function ses_unidade_integration( $input ) {
     return $input;
 }
 function ses_code_header() {
     $codeHeader = esc_attr( get_option ( 'code_header' ) );
-    echo '<textarea rows="10" cols="30" class="ses-code-header" name="code_header" value="'.$codeHeader.'" placeholder="Insert here"></textarea> <p>insira o código aqui</p>';
+    echo '<textarea rows="10" cols="30" class="ses-code-input" name="code_header" placeholder="" >';
+    echo $codeHeader;
+    echo '</textarea> <p>Adicionar código para a < head > do seu site (<i>Google Analytics, Hotjar, Navegg</i>)</p>';
+}
+function ses_code_footer() {
+    $codeFooter = esc_attr( get_option ( 'code_footer' ) );
+    echo '<textarea rows="10" cols="30" class="ses-code-input" name="code_footer" placeholder="" >';
+    echo $codeFooter;
+    echo '</textarea> <p>Adicionar código para o < body > (bom para código de controle, tais como Google Analytics)</p>';
 }
 // Post Formats Callback functions
 function ses_post_formats_callback( $input ) {

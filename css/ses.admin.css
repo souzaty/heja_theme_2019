@@ -21,3 +21,6 @@ h2 {font-size:30px; font-weight:bold; color: #004a84; width: 100%; text-transfor
 .ses-sidebar-tel {background: #0072a4;}
 .ses-sidebar-endereco {background: #198fb2}
 .ses-sidebar-email {background:#3ecfa4 }
+
+/* Integration style */
+.ses-code-input { min-width: 600px; border: 1px solid #dfdfdf; background: #efefef; color: #00aaff; padding: 5px 12px; box-shadow: none; font-family: monospace; letter-spacing: 1px; line-height: 1.5em; }
