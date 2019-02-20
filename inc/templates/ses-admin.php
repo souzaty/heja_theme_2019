@@ -1,4 +1,4 @@
-<div style="padding: 30px 10px;">
+<div style="margin:20px 0 0 20px; padding: 30px 20px; background:#fff; border:1px solid #cdcdcd;">
     <h1>Informações de contato</h1>
     <?php settings_errors(); ?>
     <?php
@@ -21,57 +21,7 @@
     </div>
 </div>
 <h2>Pré-visualização</h2>
-<div class="admin-preview-data">
+<h3>inserir pré-visualização do template aqui</h3>
+<p style="padding:15px 35px; background: #cdadfd; font-weight:bold; font-size:1.2em; color: #643a65; display:inline-block; border-radius: 5px;">exemplo - email: <?php print $email ?></p>
 
-<div class="ses-admin-preview">
-    <div class="ses-sidebar-preview">
-        <h3>Sidebar</h3>
-        <div class="image-container">
-			<div id="profile-picture-preview" class="profile-picture" style="background-image: url(<?php print $logoUnidadeRodape; ?>);"></div>
-		</div>
-        <div class="ses-sidebar">
-    		<div class="ses-sidebar-tel">
-				<span class="tel-icon-destaque"></span>
-				<p class="text-box"><b>(<?php print $ddd ?>) <?php print $tel ?></b><br> Fale Conosco</p>
-            </div>
-			<div class="ses-sidebar-endereco">
-				<span class="map-icon-destaque"></span>
-				<p class="text-box"><b>Como Chegar</b><br> Acessar Mapa</p>
-			</div>
-			<div class="ses-sidebar-email">
-				<div class="box">
-				<span class="msg-icon-destaque"></span>
-				<p class="text-box"><?php print $email ?></p>
-				</div>
-			</div>
-        </div>
-    </div>
-</div>
-<!-- Footer -->
-<img src="<?php print $logoUnidadeRodape ?>" alt="">
-<div class="ses-admin-preview">
-    <div class="ses-sidebar-preview">
-        <h3>Rodapé</h3>
-        <div class="ses-sidebar">
-    		<div class="ses-sidebar-tel">
-				<span class="tel-icon-destaque"></span>
-				<p class="text-box"><b>(<?php print $ddd ?>) <?php print $tel ?></b><br> Fale Conosco</p>
-            </div>
-    			<div class="ses-sidebar-endereco">
-					<span class="map-icon-destaque"></span>
-					<p class="text-box"><b>Como Chegar</b><br> Acessar Mapa</p>
-    			</div>
-    			<div class="ses-sidebar-email">
-    				<div class="box">
-					<span class="msg-icon-destaque"></span>
-					<p class="text-box"><?php print $email ?></p>
-    				</div>
-    			</div>
-    			<p></p>
-    			<p>
-    			</p>
-    		</div>
-        </div>
-    </div>
-</div>
 </div>
