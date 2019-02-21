@@ -42,32 +42,26 @@
 <nav class="navbar navbar-expand-lg ses-nav-default">
 	<div class="container">
 		<!-- Branding -->
-		<div class="image-container">
-			<div id="profile-picture" class="profile-picture" style="background-image: url(<?php print $logoUnidadeRodape; ?>);"></div>
-		</div>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-		</button>
-		<!-- Menu -->
-		<?php wp_nav_menu( array(
-			'menu' => 'menu_header',
-			'theme_location' => 'menu_header',
-			'container' => 'div',
-			'container_class' => 'collapse navbar-collapse ses-nav-menu navbar-right',
-			'container_id' => 'navbarSupportedContent',
-			'menu_class' => 'nav justify-content-end',
-			'echo' => true,
-			'menu_id' => 'id_do_menu',
-			'before' => "",
-			'after' => "",
-			'link_before' => "",
-			'link_after' => "",
-			'depth' => 0,
-			'walker' => "",
+        <a class="navbar-brand" href="#"><?php esc_html_e( bloginfo( 'name' ), 'themeslug' ); ?></a>
 
-			) );
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headerNav" aria-controls="headerNav" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'best-reloaded' ); ?>">
+            <span class="navbar-toggler-icon"></span><span class="sr-only"><?php esc_html_e( 'Toggle Navigation', 'themeslug' ); ?></span>
+        </button>
+        <nav class="collapse navbar-collapse" id="headerNav" role="navigation" aria-label="Main Menu">
+            <span class="sr-only"><?php esc_html_e( 'Main Menu', 'themeslug' ); ?></span>
+    		<!-- Menu -->
+            <?php wp_nav_menu( array(
+                'theme_location' => 'menu_header',
+                'depth'          => 2,
+                'container'      => false,
+                'menu_class'     => 'navbar-nav mr-auto',
+                'fallback_cb'    => 'WP_Bootstrap_Navwalker::fallback',
+                // Process nav menu using our custom nav walker.
+                'walker'         => new WP_Bootstrap_Navwalker(),
+            ) );
 			?>
-	</div><!-- end container -->
+        </nav><!-- end nav -->
+    </div><!-- end container -->
 </nav><!-- end nav -->
 <!-- Header -->
 <header class="masthead bg-primary text-white text-center">

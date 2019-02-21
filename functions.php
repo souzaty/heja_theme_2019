@@ -38,6 +38,8 @@ function load_scripts() {
     // Google Fonts
     wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i', false );
     }
+    // Register Custom Navigation Walker
+    require_once 'class-wp-bootstrap-navwalker.php';
 
     add_action( 'wp_enqueue_scripts', 'load_scripts' );
 
@@ -73,17 +75,5 @@ function load_scripts() {
  				'caption'
  ));
 
- // Adiciona suporte a vários tipos de posts
- add_theme_support('post-formats', array(
- 				'aside',
- 				'image',
- 				'video',
- 				'quote',
- 				'link',
- 				'gallery',
- 				'status',
- 				'audio',
- 				'chat'
- ));
  // Remove Meta Generator
  remove_action('wp_head', 'wp_generator');
