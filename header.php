@@ -71,3 +71,23 @@
   <a class="btn btn-xl btn-outline-light" href="#"> call to action</a>
 </div>
 </header>
+<div class="container">
+    <h3>Teste loop aqui</h3>
+            <?php
+            $new_query = new WP_Query( array(
+        'posts_per_page' => -1,
+        'post_type'      => especialidades,
+        'orderby'        => 'menu_order',
+        'paged'          => $paged
+        ) );
+
+        while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+
+        <li><?php the_title(''); ?></li>
+
+        <?php
+
+        endwhile;
+        wp_reset_postdata();
+            ?>
+</div>
