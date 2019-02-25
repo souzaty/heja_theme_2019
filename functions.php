@@ -22,8 +22,6 @@
 # Shortcodes
 # WP-login Customization
 --------------------------------------------------------------*/
-
-<<<<<<< HEAD
  // ========== Start Load scripts
 function load_scripts() {
     // bootstrap scripts
@@ -81,7 +79,6 @@ function load_scripts() {
  remove_action('wp_head', 'wp_generator');
 
  // Disable support for comments and trackbacks in post types
-=======
 // ========== Start Theme Admin
 require get_template_directory() . '/inc/function-admin.php';
 require get_template_directory() . '/inc/enqueue.php';
@@ -93,7 +90,6 @@ register_nav_menus(array( 'menu_header' => __('Menu topo Unidade', ''),
 ));
 
 // Disable support for comments and trackbacks in post types
->>>>>>> 61faa83e5fb42946b1a36a6fbd4a1e2d61dab6f0
 function df_disable_comments_post_types_support() {
 	$post_types = get_post_types();
 	foreach ($post_types as $post_type) {

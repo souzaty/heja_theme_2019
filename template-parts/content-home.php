@@ -7,7 +7,7 @@
 
 ?>
 <div class="col-md-4">
-    <a href="<?php echo get_permalink(); ?>"><?php the_post_thumbnail('noticias-home-heelj'); ?></a>
+    <a href="<?php echo get_permalink(); ?>"><?php the_post_thumbnail('noticias-home'); ?></a>
     <h2 class="title-news"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
     <p class="resume-news"><?php the_excerpt(); ?></p>
         <a href="<?php echo get_permalink();?>">
