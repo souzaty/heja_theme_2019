@@ -8,6 +8,7 @@
 ?>
 <div class="col-md-4">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <a href="<?php echo get_permalink(); ?>"><?php the_post_thumbnail('noticias-home'); ?></a>
     <h2 class="title-news"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
     <p class="resume-news"><?php the_excerpt(); ?></p>
@@ -15,6 +16,8 @@
             <button type="button" class="btn btn-default btn-blue" aria-label="Left Align">Leia mais</button>
         </a>
 =======
+=======
+>>>>>>> parent of b3f86e9... content home
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     	<div class="post-thumbnail">
     		<?php the_post_thumbnail(); ?>
@@ -53,5 +56,8 @@
     		<?php wp_bootstrap_starter_entry_footer(); ?>
     	</footer><!-- .entry-footer -->
     </article>
+<<<<<<< HEAD
+>>>>>>> parent of b3f86e9... content home
+=======
 >>>>>>> parent of b3f86e9... content home
 </div>
