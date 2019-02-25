@@ -452,6 +452,23 @@ body:not(.theme-preset-active) #masthead .navbar-nav > li.current_page_item > a 
     border: medium none;
     outline: none;
   }
+  ul#id_do_menu {
+    display: block !important;
+    text-align: right;
+    /* width: 100%; */
+    background: #fff;
+    padding: 10px 20px;
+    margin: 0;
+}
+ul#id_do_menu li {
+    padding: 10px 0;
+    margin: 0 10px;
+    border-bottom: 1px solid #fff;
+    color: #000;
+}
+ul#id_do_menu li a {
+    color: #005da7;
+}
 }
 .site-main .comment-navigation,
 .site-main .posts-navigation,
@@ -503,7 +520,18 @@ body:not(.theme-preset-active) #masthead .navbar-nav > li.current_page_item > a 
 .post-navigation .nav-next a:hover {
   background: #eee none repeat scroll 0 0;
 }
-
+.menu-button {
+    background: #fff;
+    display: inline-block;
+    width: auto !important;
+    padding: 9px 15px;
+    color: #005da7;
+    height: auto !important;
+    border-radius: 3px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/

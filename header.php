@@ -39,7 +39,7 @@
         			<div id="profile-picture" class="profile-picture" style="background-image: url(<?php print $logoUnidadeRodape; ?>);"></div>
         		</div>
         		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        		<span class="navbar-toggler-icon"></span>
+        		<span class="navbar-toggler-icon menu-button">menu</span>
         		</button>
         		<!-- Menu -->
         		<?php wp_nav_menu( array(
