@@ -13,6 +13,9 @@
  */
 
 get_header(); ?>
+<div id="content" class="site-content">
+    <div class="container">
+        <div class="row">
 
 	<section id="primary" class="content-area col-sm-12 col-lg-8">
 		<main id="main" class="site-main" role="main">
@@ -33,6 +36,8 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_sidebar(); ?>
+        </div><!-- .row -->
+    </div><!-- .container -->
+</div><!-- #content -->
+<?php get_footer(); ?>
