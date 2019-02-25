@@ -1,11 +1,9 @@
 <?php
 /**
- * Template part for displaying posts
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WP_Bootstrap_Starter
- */
+* @package WordPress
+* @subpackage SES - GO Unidades
+* @since SES - GO Unidades 1.0
+*/
 
 ?>
 <div class="col-md-4">
