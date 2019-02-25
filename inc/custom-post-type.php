@@ -9,12 +9,84 @@
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+# O Hospital
 # Especialidades
 # Exames
 # Menu
 # Transparencia
 --------------------------------------------------------------*/
 
+// Start CPT O Hospital
+add_action('init', 'hospital_register');
+function hospital_register()
+{
+				$product_permalink = 'hospital/%Formato%/';
+				$labels            = array(
+								'name' => __('Hospital', 'Tipo de post para incluir texto apresentação hospital.'),
+								'singular_name' => __('O Hospital', 'post type singular name'),
+								'all_items' => __(''),
+								'add_new' => _x('Adicionar descrição', 'Adicionar descrição'),
+								'add_new_item' => __('Adicionar novo'),
+								'edit_item' => __('Editar texto'),
+								'new_item' => __('Nova descrição'),
+								'view_item' => __('Ver item da'),
+								'search_items' => __('Procurar descrição'),
+								'not_found' => __('Nenhuma descrição encontrado'),
+								'not_found_in_trash' => __('Nenhuma descrição encontrada na lixeira'),
+								'parent_item_colon' => ''
+				);
+				$args              = array(
+								'labels' => $labels,
+								'public' => true,
+								'publicly_queryable' => true,
+								'show_ui' => true,
+								'query_var' => true,
+								'menu_icon' => 'dashicons-id',
+								'rewrite' => array(
+												'slug' => 'hospital/%Formato%',
+												'with_front' => false
+								),
+								'capability_type' => 'post',
+								'hierarchical' => false,
+								'menu_position' => 25,
+								'supports' => array(
+												'title',
+                                                'editor'
+								)
+				);
+				register_post_type('hospital', $args);
+				flush_rewrite_rules();
+}
+// Filter to change the permalink
+add_filter('post_link', 'hospital_permalink', 1, 3);
+add_filter('post_type_link', 'hospital_permalink', 1, 3);
+function hospital_permalink($permalink, $post_id, $leavename)
+{
+				//con %brand% catturo il rewrite del Custom Post Type
+				if (strpos($permalink, '%hospital%') === FALSE)
+								return $permalink;
+				// Get post
+				$post = get_post($post_id);
+				if (!$post)
+								return $permalink;
+				// Get taxonomy terms
+				$terms = wp_get_object_terms($post->ID, 'Formato');
+				if (!is_wp_error($terms) && !empty($terms) && is_object($terms[0]))
+								$taxonomy_slug = $terms[0]->slug;
+				else
+								$taxonomy_slug = 'no-brand';
+				return str_replace('%hospital%', $taxonomy_slug, $permalink);
+}
+
+?>
+
+	<?php
+add_action('save_post_hospital', 'save_details_post_hospital');
+function save_details_post_hospital()
+{
+				global $post;
+				update_post_meta($post->ID, "link_hospital", $_POST["link_hospital"]);
+}
 // Start CPT Especialidades
 add_action('init', 'especialidades_register');
 function especialidades_register()

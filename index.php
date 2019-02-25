@@ -16,11 +16,60 @@ get_header(); ?>
 <section style="padding:90px 0; background-color: #f4f4f4">
     <div class="container">
         <div class="row">
+            <div class="col-md-12">
+                <h2>O Hospital</h2>
+            </div>
             <div class="col-md-6">
-                asas
+
+                <p>O Hospital de Urgência da Região Sudoeste Dr. Albanir Faleiros Machado (HURSO) é uma Unidade da Secretaria de Estado de Saúde de Goiás e pode ser categorizado como um Hospital Porta Aberta Regulada. <br><br>
+
+Conta com 69 leitos de internações clínicas e cirúrgicas; 20 leitos de terapia intensiva, divididos entre pediátrica e adulta; além de 22 leitos de “retaguarda” – observação, recuperação anestésica, sala vermelha e amarela. A Unidade presta atendimento a pacientes dos 27 municípios da região Sudoeste de Goiás.
+</p>
             </div>
             <div class="col-md-3">
-                queijo
+                <h3 style="color: #005da7; font-weight:bold; font-size:22px; margin-top:0;">Especialidades</h3>
+                <div class="content-lista-exames">
+                    <?php
+                    $new_query = new WP_Query( array(
+                'posts_per_page' => -1,
+                'post_type'      => especialidades,
+                'orderby'        => 'menu_order',
+                'paged'          => $paged
+                ) );
+
+                while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+
+                <li><?php the_title(''); ?></li>
+
+                <?php
+
+                endwhile;
+                wp_reset_postdata();
+                    ?>
+                </div><!-- end content lista -->
+            </div>
+            <div class="col-md-3">
+                <div class="content-lista-exames">
+                <h3 style="color: #005da7; font-weight:bold; font-size:22px;margin-top:0;">Exames</h3>
+                    <?php
+                    $new_query = new WP_Query( array(
+                'posts_per_page' => -1,
+                'post_type'      => exames,
+                'orderby'        => 'menu_order',
+                'paged'          => $paged
+                ) );
+
+                while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
+
+                <li class="lista-exame"><?php the_title(''); ?></li>
+
+                <?php
+
+                endwhile;
+                wp_reset_postdata();
+                    ?>
+                </div> <!-- end content lista -->
+
             </div>
         </div>
     </div>

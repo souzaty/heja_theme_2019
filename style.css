@@ -33,6 +33,25 @@ Tags:
 # Woocommerce
 # Footer
 --------------------------------------------------------------*/
+/* My styles */
+
+.lista-exame {
+    list-style-type: none;
+    padding: 5px 0;
+}
+.lista-exame:before {
+    content: '';
+    display: inline-block;
+    width:8px;
+    height:8px;
+    margin-right: 10px;
+    background: #005da7;
+}
+.content-lista-exames {
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
