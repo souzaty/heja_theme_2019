@@ -14,6 +14,9 @@ $endereco = esc_attr( get_option ( 'endereco_unidade' ) );
 $cep = esc_attr( get_option ( 'cep_unidade' ) );
 $cnpj = esc_attr( get_option ( 'cnpj_unidade' ) );
 ?>
+        </div><!-- .row -->
+    </div><!-- .container -->
+</div><!-- #content -->
 <footer class="footer text-center" style="text-align:center; background:#cdcdcd; padding:20px  0">
     <div class="container">
         <div class="row">

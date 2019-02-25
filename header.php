@@ -90,3 +90,6 @@
                 wp_reset_postdata();
                     ?>
         </div>
+        <div id="content" class="site-content">
+    		<div class="container">
+    			<div class="row">
