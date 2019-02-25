@@ -14,13 +14,9 @@
 
 get_header(); ?>
 <?php
-$nomeUnidade = esc_attr( get_option ( 'nome_unidade' ) );
 $email = esc_attr( get_option ( 'email_unidade' ) );
 $ddd = esc_attr( get_option ( 'ddd_unidade' ) );
 $tel = esc_attr( get_option ( 'tel_unidade' ) );
-$endereco = esc_attr( get_option ( 'endereco_unidade' ) );
-$cep = esc_attr( get_option ( 'cep_unidade' ) );
-$cnpj = esc_attr( get_option ( 'cnpj_unidade' ) );
 $codeMaps = esc_attr( get_option ( 'code_maps' ) );
 ?>
 <section style="padding:90px 0; background-color: #f4f4f4">

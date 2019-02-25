@@ -110,6 +110,8 @@ function wp_bootstrap_starter_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+    add_filter('jpeg_quality', create_function('', 'return 100;'));
+    add_image_size('noticias-home', 366, 232, true);
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
