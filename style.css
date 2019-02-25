@@ -52,6 +52,45 @@ Tags:
     overflow-y: scroll;
 }
 
+.info-section {
+    background: #fff;
+    padding: 25px 0;
+    box-shadow: 0 -5px 18px rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+    display: flex;
+    align-itens: flex-start;
+    flex-wrap: nowrap
+}
+.info-content {
+    display: flex;
+    align-items: flex-start;
+}
+.info-icon {
+width:25%;
+	max-width:45px;
+    margin-top:0;
+}
+.info-description {
+	width:70%
+}
+.info-icon,.info-description {
+    display: inline-block;
+}
+.info-icon {
+	margin-right:10px
+}
+.info-icon img {
+    display: inline-block;
+    max-width: 40px;
+}
+.info-title, .info-subtitle {
+    margin:0;
+}
+.blog {
+    padding:90px 0;
+    background:#005da7;
+}
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/

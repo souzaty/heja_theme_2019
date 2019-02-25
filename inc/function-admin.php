@@ -55,6 +55,7 @@ function ses_custom_settings() {
     add_settings_field('code-header', 'Header code', 'ses_code_header', 'souzaty_ses_integration', 'ses-unidade-integration');
     add_settings_field('code-footer', 'Footer code', 'ses_code_footer', 'souzaty_ses_integration', 'ses-unidade-integration');
     add_settings_field('code-css', 'Customize CSS', 'ses_code_css', 'souzaty_ses_integration', 'ses-unidade-integration');
+    add_settings_field('code-maps', 'Google maps URL', 'ses_code_maps', 'souzaty_ses_integration', 'ses-unidade-integration');
 
     // Sanitize header code
     function ses_sanitize_code_header($input) {
@@ -121,6 +122,10 @@ function ses_code_css() {
     echo '<textarea rows="10" cols="30" class="ses-code-input" name="custom_css" placeholder="" >';
     echo $codeCSS;
     echo '</textarea> <p class="legend">Adiciona estilos personalizados a sua folha de estilos CSS</p>';
+}
+function ses_code_maps() {
+    $codeMaps = esc_attr(get_option('code_maps'));
+    echo '<input class="ses-nome-unidade" type="text" name="code_maps" value="' . $codeMaps . '" placeholder="Google Maps URL" />';
 }
 // Post Formats Callback functions
 function ses_post_formats_callback($input) {
