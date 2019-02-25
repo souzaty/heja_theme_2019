@@ -93,8 +93,36 @@ width:25%;
 .home-title-news a {
     color:#fdd115;
 }
-.home-resume-news {
+.home-resume-news p {
     color:#fff;
+    display: inline-block;
+    width: 100%;
+}
+.home-resume-news p:after {
+    content: ' [...]'
+}
+.title-section {
+    font-size:42px;
+    margin:0 0 35px 0;
+}
+.white { color:#fff}
+
+.btn-mais-noticias {
+    margin:60px auto 0;
+    font-size:17px;
+    font-weight:bold;
+    display:block;
+    text-align: center;
+    border: 2px solid #fdd115;
+    color: #fdd115;
+    background:transparent;
+    padding:8px 30px;
+    border-radius: 0;
+    text-transform: uppercase;
+}
+.btn-mais-noticias:hover {
+    background: #fdd115;
+    color: #005da7;
 }
 /*--------------------------------------------------------------
 # Normalize

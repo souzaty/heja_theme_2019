@@ -152,7 +152,7 @@ $codeMaps = esc_attr( get_option ( 'code_maps' ) );
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                Noticias
+                <h2 class="title-section white">Noticias</h2>
             </div>
             <?php
     		if ( have_posts() ) :
@@ -184,6 +184,9 @@ $codeMaps = esc_attr( get_option ( 'code_maps' ) );
     			get_template_part( 'template-parts/content-home', 'none' );
 
     		endif; ?>
+            <div class="col-md-12">
+                <button type="button" class="btn btn-default btn-mais-noticias" aria-label="center Align">Mais ntícias</button>
+            </div>
         </div><!-- end row -->
     </div><!-- end container -->
 </section>
