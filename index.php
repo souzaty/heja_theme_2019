@@ -96,16 +96,6 @@ $codeMaps = esc_attr( get_option ( 'code_maps' ) );
     </div>
 </section>
 <div class="service-content">
-    <!--
-    <div class="service-brand">
-        <img src="https://souzaty.com/wp-content/uploads/adparlor.png" alt="">
-    </div>
-    <div class="service-description">
-        <h2 class="service-title">Adparlor</h2>
-        <p>Crie mockups de suas campanhas para mídias sociais com facilidade e rapidez.</p>
-    </div>
-</div>
--->
 <section class="info-section">
     <div class="container">
         <div class="row">
