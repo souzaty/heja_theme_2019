@@ -36,7 +36,10 @@
         	<div class="container">
         		<!-- Branding -->
         		<div class="image-container">
-        			<div id="profile-picture" class="profile-picture" style="background-image: url(<?php print $logoUnidadeRodape; ?>);"></div>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+        			<img class= "hide-mobile" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo-unidade-desktop.png" alt="">
+                    <img class= "logo-mobile" style="display:none;" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo-unidade-mobile.png" alt="">
+                    </a>
         		</div>
         		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         		<span class="navbar-toggler-icon menu-button">menu</span>

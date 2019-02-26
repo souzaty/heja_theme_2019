@@ -530,6 +530,10 @@ body:not(.theme-preset-active) #masthead .navbar-nav > li.current_page_item > a 
     padding: 0;
   }
 
+  .hide-mobile {display:none;}
+
+  .logo-mobile {display: block !important;}
+
   .dropdown-menu li a {
     padding: 0;
   }
