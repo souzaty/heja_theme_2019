@@ -53,7 +53,7 @@ $slideHome = esc_attr( get_option ( 'slide_home' ) );
 
                 while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
 
-                <li><?php the_title(''); ?></li>
+                <li class="lista-exame"><?php the_title(''); ?></li>
 
                 <?php
 
@@ -95,7 +95,7 @@ $slideHome = esc_attr( get_option ( 'slide_home' ) );
             <div class="col-md-3">
                 <div class="info-content">
                     <div class="info-icon">
-                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/call" alt="">
+                        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/call.png" alt="">
                     </div>
                     <div class="info-description">
                         <h4 class="info-title">(<?php print $ddd ?>)<?php print $tel ?></h4>
@@ -107,7 +107,7 @@ $slideHome = esc_attr( get_option ( 'slide_home' ) );
                 <div class="info-content">
                     <div class="info-icon">
                         <a href="<?php print $codeMaps ?>" target="_blank">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/place" alt="">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/place.png" alt="">
                         </a>
                     </div>
                     <div class="info-description">
@@ -119,13 +119,13 @@ $slideHome = esc_attr( get_option ( 'slide_home' ) );
             <div class="col-md-3">
                 <div class="info-content">
                     <div class="info-icon">
-                        <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/transparencia.php" target="_blank">
+                        <a href="/transparencia-e-processos/" target="_blank">
                             <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/transparencia.png" alt="">
                         </a>
                     </div>
                     <div class="info-description">
-                        <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/transparencia.php"><h4 class="info-title">Transparência</h4></a>
-                        <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/transparencia.php" target="_blank"><p class="info-subtitle">Gestão transparente</p></a>
+                        <a href="/transparencia-e-processos/"><h4 class="info-title">Transparência</h4></a>
+                        <a href="/transparencia-e-processos/" target="_blank"><p class="info-subtitle">Gestão transparente</p></a>
                     </div>
                 </div>
             </div>

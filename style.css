@@ -35,6 +35,9 @@ Tags:
 # Forms
 --------------------------------------------------------------*/
 /* My styles */
+section {
+    margin: 0; padding:0;
+}
 nav.navbar.navbar-expand-lg.ses-nav-default {
     margin: 0;
 }
@@ -459,7 +462,9 @@ h3.widget-title {
 # Elements
 --------------------------------------------------------------*/
 body {
-  background: #fff;
+  background: #fff !important;
+  font-size: 16px;
+line-height: 160%;
   /* Fallback for when there is no custom background color defined. */
 }
 
@@ -924,6 +929,8 @@ a img.aligncenter {
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 0;
+  margin: 0;
+  padding: 0;
 }
 
 .page-links {
