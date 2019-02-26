@@ -14,11 +14,10 @@ get_header(); ?>
             <div class="container">
                 <div class="row">
                     <header class="page-header" style="width:100%;">
-    					<h1 class="page-title" ><?php esc_html_e( 'Conteúdo não encontrado.', 'wp-bootstrap-starter' ); ?></h1>
+    					<h1 class="page-title" style="margin:0; text-align:center;" ><?php esc_html_e( 'Conteúdo não encontrado.', 'wp-bootstrap-starter' ); ?></h1>
+                        <p style="text-align:center;"><?php esc_html_e( 'Parece que nada foi encontrado neste local. Talvez tente um dos links abaixo ou uma pesquisa?', 'wp-bootstrap-starter' ); ?></p>
     				</header><!-- .page-header -->
-                    <div class="page-content">
-    					<p><?php esc_html_e( 'Parece que nada foi encontrado neste local. Talvez tente um dos links abaixo ou uma pesquisa?', 'wp-bootstrap-starter' ); ?></p>
-
+                    <div class="page-content" style="margin:0 auto">
     					<?php
     						get_search_form();
     					?>

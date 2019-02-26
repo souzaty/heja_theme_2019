@@ -184,7 +184,7 @@ $slideHome = esc_attr( get_option ( 'slide_home' ) );
 
     		endif; ?>
             <div class="col-md-12">
-                <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/noticias/">
+                <a href="/noticias/">
                 <button type="button" class="btn btn-default btn-mais-noticias" aria-label="center Align">Mais notícias</button>
                 </a>
             </div>

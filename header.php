@@ -5,6 +5,15 @@
 * @since SES - GO Unidades 1.0
 */
 ?><!DOCTYPE html>
+<?php
+$nomeUnidade = esc_attr( get_option ( 'nome_unidade' ) );
+$email = esc_attr( get_option ( 'email_unidade' ) );
+$ddd = esc_attr( get_option ( 'ddd_unidade' ) );
+$tel = esc_attr( get_option ( 'tel_unidade' ) );
+$endereco = esc_attr( get_option ( 'endereco_unidade' ) );
+$cep = esc_attr( get_option ( 'cep_unidade' ) );
+$cnpj = esc_attr( get_option ( 'cnpj_unidade' ) );
+?>
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -13,19 +22,21 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <?php wp_head(); ?>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116827640-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-116827640-1');
+    </script>
     <link rel='stylesheet' id='wp-bootstrap-starter-style-css'  href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/custom.css" type='text/css' media='all' />
+
+
 </head>
 
 <body <?php body_class(); ?>>
-        <?php
-        $nomeUnidade = esc_attr( get_option ( 'nome_unidade' ) );
-        $email = esc_attr( get_option ( 'email_unidade' ) );
-        $ddd = esc_attr( get_option ( 'ddd_unidade' ) );
-        $tel = esc_attr( get_option ( 'tel_unidade' ) );
-        $endereco = esc_attr( get_option ( 'endereco_unidade' ) );
-        $cep = esc_attr( get_option ( 'cep_unidade' ) );
-        $cnpj = esc_attr( get_option ( 'cnpj_unidade' ) );
-        ?>
         <!-- Navigation -->
         <nav class="ses-nav-top">
         	<div class="container">
