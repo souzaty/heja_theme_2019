@@ -32,6 +32,7 @@ Tags:
 	## Galleries
 # Woocommerce
 # Footer
+# Forms
 --------------------------------------------------------------*/
 /* My styles */
 nav.navbar.navbar-expand-lg.ses-nav-default {
@@ -1221,4 +1222,16 @@ body:not(.theme-preset-active) footer#colophon {
   html {
     font-size: 75%;
   }
+}
+/*--------------------------------------------------------------
+## iFormulários
+--------------------------------------------------------------*/
+input#fld_8064240_1 {
+    background: #005da7;
+    color: #fff;
+    border-radius: 0;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
 }

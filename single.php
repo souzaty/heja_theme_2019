@@ -12,17 +12,19 @@ get_header(); ?>
     <div class="container">
         <div class="row">
 
-		<?php
-		while ( have_posts() ) : the_post();
-
-			get_template_part( 'template-parts/content', get_post_format() );
-
-		endwhile; // End of the loop.
-		?>
-
-        <div class="col-md-3">
-            <?php get_sidebar(); ?>
-        </div>
+            <article>
+              <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+              <h1 class="dark-blue"><?php the_title(); ?></h1>
+              <div class="postMeta">
+                <abbr class="published updated" title="<?php the_time('j/m/Y'); ?>"><span class="clock"></span><?php the_time('j/m/Y'); ?></abbr> <span class="tag"></span>
+                <?php the_category( ', ' ); ?>
+                <p></p>
+              </div>
+              <div class="postContent">
+                <?php the_content(); ?>
+              </div>
+          <?php endwhile; endif; ?>
+        </article>
         </div><!-- End row -->
     </div><!-- end container -->
 </div><!-- End content -->
