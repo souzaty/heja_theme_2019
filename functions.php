@@ -209,6 +209,16 @@ function wp_bootstrap_starter_widgets_init() {
         'after_title'   => '</h3>',
     ) );
 }
+// Start Custom Excerpt
+/** Changing excerpt length to 20 words
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 120 );
+// End Custom Excerpt
 add_action( 'widgets_init', 'wp_bootstrap_starter_widgets_init' );
 /**
  * Enqueue scripts and styles.

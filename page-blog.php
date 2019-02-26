@@ -9,45 +9,42 @@ get_header(); ?>
     <div class="container">
         <div class="row">
 
-	<section id="primary" class="content-area col-sm-12 col-lg-8">
-		<main id="main" class="site-main" role="main">
 
+            <!-- Main Blog Content -->
             <?php
-    		if ( have_posts() ) :
+               global $post;
+               $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+               $wp_query = new WP_Query();
+               $wp_query->query('post_type=post&cat=post&orderby=date&order=DESC&posts_per_page=4&paged=' . $paged);
+                ?>
+            <?php if ($wp_query->have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post();?>
 
+                  <div class="col-md-5">
+                     <?php the_post_thumbnail('noticias-blog'); ?>
+                  </div>
+                  <div class="col-md-7">
+                     <div class="postMeta">
+                        <abbr class="published updated" title="<?php the_time('j/m/Y'); ?>"><span class="clock"></span><?php the_time('j/m/Y'); ?></abbr> <span class="tag"></span>
+                        <?php the_category( ', ' ); ?>
+                     </div>
+                     <h3 class="postTitle entry-title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
+                     <div class="postSummary entry-content">
+                        <p><?php the_excerpt(); ?></p>
+                        <a href="<?php echo get_permalink(); ?>"><button style="margin-right:20px" type="button" class="btn btn-default btn-blue" aria-label="Left Align">Leia mais</button></a>
+                     </div>
+                 </div>
+                     <div class="col-md-12">
+                         <hr style="height:20px; background:transparent; border:none">
+                     </div>
+            <?php endwhile; ?>
+            <!-- Pagintation -->
+            <?php if ( function_exists('wp_bootstrap_pagination') )
+                 wp_bootstrap_pagination();
+               ?>
+            <?php endif; wp_reset_query(); ?>
 
-    				<header>
-    					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-    				</header>
-
-    			
-    			endif;
-
-    			/* Start the Loop */
-    			while ( have_posts() ) : the_post();
-
-    				/*
-    				 * Include the Post-Format-specific template for the content.
-    				 * If you want to override this in a child theme, then include a file
-    				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-    				 */
-    				get_template_part( 'template-parts/content-blog', get_post_format() );
-
-    			endwhile;
-
-    			the_posts_navigation();
-
-    		else :
-
-    			get_template_part( 'template-parts/content-blog', 'none' );
-
-    		endif; ?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
-
-<?php get_sidebar(); ?>
+<!-- <?php get_sidebar(); ?>
         </div><!-- .row -->
     </div><!-- .container -->
 </div><!-- #content -->
-<?php get_footer(); ?>
+<?php get_footer();
