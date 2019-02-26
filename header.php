@@ -65,11 +65,3 @@
         			?>
         	</div><!-- end container -->
         </nav><!-- end nav -->
-        <!-- Header -->
-        <header class="masthead bg-primary text-white text-center">
-        <div class="container">
-          <h1 class=" mb-0">slider home</h1>
-          <h2 class="font-weight-light mb-0">texto descritivo inserir aqui</h2>
-          <a class="btn btn-xl btn-outline-light" href="#"> call to action</a>
-        </div>
-        </header>

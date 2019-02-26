@@ -34,6 +34,9 @@ Tags:
 # Footer
 --------------------------------------------------------------*/
 /* My styles */
+.slide-home {
+    padding:0; margin:0;
+}
 
 .lista-exame {
     list-style-type: none;

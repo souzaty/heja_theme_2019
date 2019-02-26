@@ -45,13 +45,16 @@ function ses_custom_settings() {
     add_settings_field('unidade-cnpj', 'CNPJ da unidade', 'ses_unidade_cnpj', 'souzaty_ses', 'ses-unidade-options');
 
     // Integration code settings
+    register_setting('ses-integration-group', 'slide_home');
     register_setting('ses-integration-group', 'code_header', 'ses_sanitize_code_header');
     register_setting('ses-integration-group', 'code_footer', 'ses_sanitize_code_footer');
     register_setting('ses-integration-group', 'custom_css', 'ses_sanitize_custom_css');
     register_setting('ses-integration-group', 'code_maps');
 
+
     add_settings_section('ses-unidade-integration', 'Códigos de integração para inserir no template da Unidade Hospitalar', 'ses_unidade_integration', 'souzaty_ses_integration');
 
+    add_settings_field('slide-home', 'Slider Home', 'ses_slide_home', 'souzaty_ses_integration', 'ses-unidade-integration');
     add_settings_field('code-header', 'Header code', 'ses_code_header', 'souzaty_ses_integration', 'ses-unidade-integration');
     add_settings_field('code-footer', 'Footer code', 'ses_code_footer', 'souzaty_ses_integration', 'ses-unidade-integration');
     add_settings_field('code-css', 'Customize CSS', 'ses_code_css', 'souzaty_ses_integration', 'ses-unidade-integration');
@@ -104,6 +107,10 @@ function ses_custom_settings() {
 // Unidade integration functions
 function ses_unidade_integration($input) {
     return $input;
+}
+function ses_slide_home() {
+    $slideHome = esc_attr(get_option('slide_home'));
+    echo '<input class="ses-nome-unidade" type="text" name="slide_home" value="' . $slideHome . '" placeholder="Slider Revolution Shortcode" />';
 }
 function ses_code_header() {
     $codeHeader = esc_attr(get_option('code_header'));

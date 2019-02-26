@@ -18,7 +18,12 @@ $email = esc_attr( get_option ( 'email_unidade' ) );
 $ddd = esc_attr( get_option ( 'ddd_unidade' ) );
 $tel = esc_attr( get_option ( 'tel_unidade' ) );
 $codeMaps = esc_attr( get_option ( 'code_maps' ) );
+$slideHome = esc_attr( get_option ( 'slide_home' ) );
 ?>
+<!-- Header -->
+<header class="slide-home">
+<?php print $slideHome ?>
+</header>
 <section style="padding:90px 0; background-color: #f4f4f4">
     <div class="container">
         <div class="row">
