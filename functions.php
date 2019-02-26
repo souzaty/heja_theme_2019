@@ -112,6 +112,7 @@ function wp_bootstrap_starter_setup() {
 	add_theme_support( 'post-thumbnails' );
     add_filter('jpeg_quality', create_function('', 'return 100;'));
     add_image_size('noticias-home', 366, 232, true);
+    add_image_size('noticias-blog', 720, 400, true);
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.

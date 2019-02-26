@@ -8,7 +8,6 @@
  */
 
 ?>
-<div id="content" class="site-content">
     <div class="container">
         <div class="row">
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -46,7 +45,6 @@
 	</div><!-- .entry-content -->
         </div><!-- End row -->
     </div><!-- end container -->
-</div><!-- End content -->
 
 	<footer class="entry-footer">
 		<?php wp_bootstrap_starter_entry_footer(); ?>
