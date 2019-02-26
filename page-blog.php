@@ -37,13 +37,15 @@ get_header(); ?>
                          <hr style="height:20px; background:transparent; border:none">
                      </div>
             <?php endwhile; ?>
+            <div class="col-md-12 asas">
             <!-- Pagintation -->
             <?php if ( function_exists('wp_bootstrap_pagination') )
                  wp_bootstrap_pagination();
                ?>
             <?php endif; wp_reset_query(); ?>
+        </div>
 
-<!-- <?php get_sidebar(); ?>
+
         </div><!-- .row -->
     </div><!-- .container -->
 </div><!-- #content -->

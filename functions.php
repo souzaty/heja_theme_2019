@@ -309,6 +309,10 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/plugin-compatibility/plugin-compatibility.php';
 /**
+ * Load pagination
+ */
+require_once('wp_bootstrap_pagination.php');
+/**
  * Load custom WordPress nav walker.
  */
 if ( ! class_exists( 'wp_bootstrap_navwalker' )) {

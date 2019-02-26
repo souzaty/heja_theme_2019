@@ -190,7 +190,7 @@ $slideHome = esc_attr( get_option ( 'slide_home' ) );
 
     		endif; ?>
             <div class="col-md-12">
-                <button type="button" class="btn btn-default btn-mais-noticias" aria-label="center Align">Mais ntícias</button>
+                <button type="button" class="btn btn-default btn-mais-noticias" aria-label="center Align">Mais notícias</button>
             </div>
         </div><!-- end row -->
     </div><!-- end container -->

@@ -127,7 +127,65 @@ width:25%;
     background: #fdd115;
     color: #005da7;
 }
+.clock, .tag {
+    width: 17px;
+    height: 15px;
+    margin-right: 5px;
+    background-position: center center;
+    display: inline-block;
+}
+.clock {
+    background: url(images/clock-icon.png);
+}
+.tag {
+    background: url(images/tag-icon.png);
+    margin-left: 30px;
+}
+h3.postTitle.entry-title {
+    font-size: 26px;
+    margin: 10px 0 0 0;
+    color: #005da7;
+}
+.btn-blue {
+    BACKGROUND: #005da7;
+    COLOR: #FFF;
+    BORDER-RADIUS: 0;
+    padding: 5px 25px;
+    border: 2px solid #005da7;
+}
+.btn-blue:hover {
+    background: transparent;
+    color: #005da7;
+}
+.pagination {
+    margin: 0 auto;
+    display: table;
+}
+.pagination>li {
+    display: inline;
+}
+.pagination>li:first-child>a, .pagination>li:first-child>span {
+    margin-left: 0;
+    border-radius: 4px;
+}
+.pagination>li>a {
+    margin: 0 8px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: 20px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
 footer {text-align:center; background:#cdcdcd; padding:60px  0}
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
