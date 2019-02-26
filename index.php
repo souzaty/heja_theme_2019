@@ -24,7 +24,7 @@ $slideHome = esc_attr( get_option ( 'slide_home' ) );
 <header class="slide-home">
 <?php print $slideHome ?>
 </header>
-<section style="padding:90px 0; background-color: #f4f4f4">
+<section class="home-about">
     <div class="container">
         <div class="row">
             <?php
@@ -71,8 +71,8 @@ $slideHome = esc_attr( get_option ( 'slide_home' ) );
                 </div><!-- end content lista -->
             </div>
             <div class="col-md-3">
-                <div class="content-lista-exames">
                 <h3 style="color: #005da7; font-weight:bold; font-size:22px;margin-top:0;">Exames</h3>
+                <div class="content-lista-exames">
                     <?php
                     $new_query = new WP_Query( array(
                 'posts_per_page' => -1,
@@ -160,6 +160,12 @@ $slideHome = esc_attr( get_option ( 'slide_home' ) );
                 <h2 class="title-section white">Noticias</h2>
             </div>
             <?php
+               global $post;
+               $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+               $wp_query = new WP_Query();
+               $wp_query->query('post_type=post&cat=post&orderby=date&order=DESC&posts_per_page=3&paged=' . $paged);
+                ?>
+            <?php
     		if ( have_posts() ) :
 
     			if ( is_home() && ! is_front_page() ) : ?>
@@ -182,11 +188,7 @@ $slideHome = esc_attr( get_option ( 'slide_home' ) );
 
     			endwhile;
 
-    			the_posts_navigation();
 
-    		else :
-
-    			get_template_part( 'template-parts/content-home', 'none' );
 
     		endif; ?>
             <div class="col-md-12">
@@ -196,6 +198,4 @@ $slideHome = esc_attr( get_option ( 'slide_home' ) );
     </div><!-- end container -->
 </section>
 
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer();
