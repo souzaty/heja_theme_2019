@@ -15,11 +15,15 @@ $cep = esc_attr( get_option ( 'cep_unidade' ) );
 $cnpj = esc_attr( get_option ( 'cnpj_unidade' ) );
 ?>
 
-<footer class="footer text-center" style="text-align:center; background:#cdcdcd; padding:20px  0">
+<footer class="footer text-center">
     <div class="container">
         <div class="row">
-          <div class="col-md-12">
-            <h2>inserir logos rodapé aqui</h2>
+          <div class="col-md-6">
+              <img class= "hide-mobile" style="float:right" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo-unidade-footer-desktop.png" alt="">
+              <img class= "logo-mobile" style="display:none;" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo-unidade-footer-mobile.png" alt="">
+          </div>
+          <div class="col-md-6">
+               <img style="float:left;" src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/logo-ses-gov.png" alt="">
           </div>
         </div>
         <hr>
