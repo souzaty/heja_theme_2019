@@ -131,6 +131,19 @@ p.info-subtitle {
     font-size:42px;
     margin:0 0 35px 0;
 }
+.read-more-home {
+    background: transparent;
+    color: #fdd115;
+    border: none;
+    padding: 3px 5px;
+    border-bottom: 2px dotted #fdd115;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.read-more-home:hover {
+    color:#fff;
+    border-color:#fff;
+}
 .white { color:#fff}
 
 .btn-mais-noticias {
@@ -168,6 +181,7 @@ h3.postTitle.entry-title {
     font-size: 26px;
     margin: 10px 0 0 0;
     color: #005da7;
+    line-height: 140%;
 }
 .btn-blue {
     BACKGROUND: #005da7;
@@ -1257,4 +1271,4 @@ input#fld_8064240_1 {
 }
 .rtbs_menu li.current a {
 	color: #fff !important;
-} 
+}

@@ -23,13 +23,13 @@ $cnpj = esc_attr( get_option ( 'cnpj_unidade' ) );
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <?php wp_head(); ?>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116827640-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116409283-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-116827640-1');
+      gtag('config', 'UA-116409283-1');
     </script>
     <link rel='stylesheet' id='wp-bootstrap-starter-style-css'  href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/custom.css" type='text/css' media='all' />
 
