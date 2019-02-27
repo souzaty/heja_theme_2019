@@ -35,9 +35,6 @@ Tags:
 # Forms
 --------------------------------------------------------------*/
 /* My styles */
-section {
-    margin: 0; padding:0 !important;
-}
 nav.navbar.navbar-expand-lg.ses-nav-default {
     margin: 0;
 }
@@ -1231,7 +1228,7 @@ body:not(.theme-preset-active) footer#colophon {
   }
 }
 /*--------------------------------------------------------------
-## iFormulários
+## Formulários
 --------------------------------------------------------------*/
 input#fld_8064240_1 {
     background: #005da7;
@@ -1242,3 +1239,22 @@ input#fld_8064240_1 {
     font-weight: bold;
     letter-spacing: 1px;
 }
+/*--------------------------------------------------------------
+## Tabs Transparencia
+--------------------------------------------------------------*/
+.rtbs_menu li a {
+    padding: 10px 20px !important;
+	display:inline-block !important;
+}
+.rtbs_menu li {
+	display: inline-block !important;
+}
+.rtbs_menu li.mobile_toggle {
+    display: none !important;
+}
+.rtbs_content {
+    padding: 20px 10px !important;
+}
+.rtbs_menu li.current a {
+	color: #fff !important;
+} 

@@ -132,13 +132,13 @@ $slideHome = esc_attr( get_option ( 'slide_home' ) );
             <div class="col-md-3">
                 <div class="info-content">
                     <div class="info-icon">
-                        <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/sau.php" target="_blank">
+                        <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/sau/" target="_blank">
                             <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/chat.png" alt="">
                         </a>
                     </div>
                     <div class="info-description">
-                        <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/sau.php"><h4 class="info-title">Avaliação</h4></a>
-                        <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/sau.php" target="_blank"><p class="info-subtitle">Queremos ouvir você</p></a>
+                        <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/sau/"><h4 class="info-title">Avaliação</h4></a>
+                        <a href="<?php echo esc_url( get_template_directory_uri() ); ?>/sau/" target="_blank"><p class="info-subtitle">Queremos ouvir você</p></a>
                     </div>
                 </div>
             </div>
